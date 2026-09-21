@@ -1,0 +1,438 @@
+@import 'tailwindcss';
+
+/* ─────────────────────────────────────────────────────────────
+   中文像素字体。源文件 645 KB，构建期子集化到 ~21 KB。
+   见 scripts/fonts/subset.ts。这个字体同时覆盖拉丁字母与数字，
+   所以全站只需要这一个字体文件。
+
+   @font-face 不写在这里，而是由 src/app/layout.tsx 内联注入。
+   原因是字体路径要跟着部署前缀走（作为 B 站 Toy 发布时全站挂在 /toy/<slug>/ 下），
+   而 CSS 里既拿不到环境变量，写相对路径又会被打包器当成模块在构建期解析失败。
+   放进布局就能用 src/lib/asset.ts 算出正确地址，与精灵图、搜索索引走同一套规则。
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /*
+   * 两套字体分工。
+   *
+   * 像素字体只用在短字符串上——站名、角色名、数字、按钮。
+   * 正文、说明、数据表一律用系统无衬线：中文像素字体在 12px 上笔画会粘连，
+   * 读一两个词没问题，读一段话很费劲。游戏 UI 的通行做法也是如此。
+   */
+  --font-pixel: 'Fusion Pixel', ui-monospace, monospace;
+  --font-ui:
+    -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Segoe UI', Roboto, sans-serif;
+
+  /*
+   * 天空。世界的时刻固定在黎明：西边夜色未退，东边朝阳已升。
+   *
+   * 第二版配色。第一版整站是紫罗兰调（#2a2148 / #5b3f7a），加上粉红的「国内」色，
+   * 长时间看眼睛发紧——紫色饱和度高、明度低，又铺满整屏，是最容易看累的组合。
+   * 这一版把底色统一到**低饱和的深蓝灰**（夜空、石板、屋墙全是同一族色），
+   * 只让金色标题、厂商色屋顶和四条能力条带颜色。暗色 UI 的通行做法：
+   * 背景退后，信息前进。
+   */
+  --color-void: #0d1017;
+  --color-dusk: #1a1f2b;
+  --color-twilight: #3b4b6b;
+  --color-ember: #b96a4a;
+  --color-dawn: #e9a663;
+  --color-gold: #f2cf6a;
+
+  /* 界面 */
+  --color-ink: #10141c;
+  --color-ink-soft: #3a4253;
+  --color-parchment: #ece4d0;
+  --color-parchment-dim: #c9bc9d;
+  --color-parchment-lit: #fbf6ea;
+
+  /* 国外 / 国内的识别色。天蓝对朱红，都往灰里压了一档，不刺眼 */
+  --color-west: #62b6e0;
+  --color-east: #e2705c;
+
+  /* 地面与建筑 */
+  --color-grass: #4b7d5a;
+  --color-grass-dark: #34573f;
+  --color-stone: #5f6878;
+  --color-stone-dark: #3a4150;
+  --color-ground: #202634;
+
+  /*
+   * 屋子。墙面按房龄分五档，都是同一族的蓝灰，只在明度上拉开；
+   * 地板与名牌比墙面再深一档，做出「剖面」的层次。
+   */
+  --color-wall-new: #2f3a52;
+  --color-wall-young: #2c364c;
+  --color-wall-mid: #293245;
+  --color-wall-old: #252d3e;
+  --color-wall-ghost: #212836;
+  --color-floor: #181d28;
+  --color-plate: #151a24;
+
+  /* 状态 */
+  --color-crown: #f2cf6a;
+  --color-newborn: #7fd58a;
+  --color-ghost: #8f98ad;
+
+  /* 像素世界不该有圆角，全站统一清零 */
+  --radius-none: 0px;
+}
+
+:root {
+  /*
+   * 角色显示盒。精灵图源是 64×64。
+   * 桌面 128px = 2 倍整数放大；移动端 96px 虽是 1.5 倍，但手机普遍 2 倍 DPR，
+   * 1.5 × 2 = 3 个设备像素对应一个源像素，依然是整数，不会糊。
+   */
+  --sprite-box: 128px;
+
+  /*
+   * 村落里一间屋子的宽度、屋内层高与角色的显示边长。
+   *
+   * 卡片加了四条能力横条之后要重新配平：宽度从 200 放到 224，
+   * 因为一条横条要装下「标签 + 8 格方块 + 数值」三段；
+   * 层高反过来从 132 压到 108，因为房间从「唯一的信息载体」
+   * 降级成了场景，不需要那么大的舞台。总高度基本持平。
+   */
+  /*
+   * 第三次配平：全站字号整体上调一档（阅读舒服优先），屋子随之放宽。
+   * 222 这个数是算出来的：1440 视口减去页边距是 1392，六间屋子加五条 12px 沟正好填满；
+   * 放到 240 就只排得下五间，右边空出 130px。
+   */
+  --room-w: 222px;
+  --room-h: 112px;
+  --room-figure: 88px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --sprite-box: 96px;
+    /* 390px 的窄屏仍要放下两列：2×172 + 列间距 8 + 两层内边距 24 = 376，留有余量 */
+    --room-w: 172px;
+    --room-h: 92px;
+    --room-figure: 66px;
+  }
+}
+
+@layer base {
+  html {
+    /* 像素字体只在整数倍字号下清晰，全站以 12px 为基准单位 */
+    font-size: 16px;
+    background: var(--color-void);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-ui);
+    /* 13 → 14：用户反馈全站字太小。像素风的游戏感来自画与边框，不来自小字。 */
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--color-ink);
+    font-synthesis: none;
+  }
+
+  /*
+   * 曾经在整页最上层铺过一层 CRT 扫描线。和石板网格一起被撤掉了：
+   * 任何规则重复的线条压在文字后面都会干扰阅读，科技感改由霓虹线与 HUD 小灯这类点状元素来给。
+   */
+
+  /* 像素字体必须关掉平滑，否则笔画会糊；但这个设置不能加在 body 上，
+     否则连正文的无衬线字体也一起被搞糊。 */
+  .font-pixel,
+  .pixel-outline {
+    font-family: var(--font-pixel);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.02em;
+  }
+
+  /* 精灵图与一切像素素材禁止插值缩放 */
+  img,
+  canvas {
+    image-rendering: pixelated;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /*
+   * 首页的内容壳。顶栏与正文必须用同一个，否则导航贴着屏幕右边、
+   * 内容却是居中的，两者对不齐——这是宽屏下第一眼就能看出的毛病。
+   *
+   * 1512 这个上限是算出来的：减去 xl 断点的两侧 48px 内边距是 1416，
+   * 再减去广场自己的 24px 内边距，屋子轨道正好 1392 = 六间 222px 的屋子加五条 12px 的沟。
+   * 早先是 1600，屋子照样只排得下六间，多出来的 130px 全挂在右边，
+   * 于是宽屏上角色一路铺到屏幕边缘、右侧空一大条，看着既不居中也不满。
+   */
+  .page-shell {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1512px;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .page-shell {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .page-shell {
+      padding-inline: 3rem;
+    }
+  }
+
+  /*
+   * HUD 外框的零件。见 SectionFrame.tsx。
+   *
+   * 科技感只做在框线上，不做在文字后面——石板网格和 CRT 扫描线就是因为
+   * 压着正文被撤掉的。角标是静态的，扫光是一条 2px 高的光沿顶边缓慢滑过，
+   * 都在内容区之外，读一段字的全程它们都不会经过字。
+   */
+  /* 轨道只负责横向裁剪；留出 10px 高度是为了让光晕能往上下散开，否则辉光会被切掉 */
+  .hud-scan-track {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hud-scan {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 2px;
+    width: 110px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--hud, var(--color-gold)) 38%,
+      var(--color-parchment-lit) 50%,
+      var(--hud, var(--color-gold)) 62%,
+      transparent
+    );
+    box-shadow: 0 0 10px 1px var(--hud, var(--color-gold));
+    /* 位移终点用 100vw：分区宽度接近视口宽，多出来的一段被轨道裁掉，读作两次扫过之间的停顿 */
+    animation: hud-sweep 9s linear infinite;
+  }
+
+  @keyframes hud-sweep {
+    from {
+      transform: translateX(-110px);
+    }
+    to {
+      transform: translateX(100vw);
+    }
+  }
+
+  /*
+   * 经典 16 位 UI 的立体边框：外描边 + 左上高光 + 右下暗面 + 投影。
+   * 用 box-shadow 而不是图片，这样任意尺寸都不会失真，也不增加请求。
+   */
+  .pixel-panel {
+    background: var(--color-parchment);
+    border: 3px solid var(--color-ink);
+    box-shadow:
+      inset -3px -3px 0 0 var(--color-parchment-dim),
+      inset 3px 3px 0 0 var(--color-parchment-lit),
+      4px 4px 0 0 rgb(0 0 0 / 0.35);
+  }
+
+  .pixel-panel-dark {
+    background: var(--color-dusk);
+    color: var(--color-parchment);
+    border: 3px solid var(--color-ink);
+    box-shadow:
+      inset -3px -3px 0 0 rgb(0 0 0 / 0.4),
+      inset 3px 3px 0 0 rgb(255 255 255 / 0.12),
+      4px 4px 0 0 rgb(0 0 0 / 0.45);
+  }
+
+  /*
+   * 本页导航的锚点小牌。见 PageJump.tsx。
+   * 平时是一圈几乎看不见的灰边，悬停才亮成该区的识别色——
+   * 它是索引不是主导航，静止时不该跟顶栏那三个像素按钮抢注意力。
+   */
+  .jump-chip {
+    border-color: rgb(255 255 255 / 0.12);
+    background: rgb(0 0 0 / 0.28);
+  }
+  .jump-chip:hover {
+    border-color: var(--jump, var(--color-gold));
+    background: rgb(0 0 0 / 0.45);
+  }
+
+  /* 按钮按下时把高光与暗面对调，制造物理下沉感 */
+  .pixel-button {
+    background: var(--color-parchment);
+    border: 3px solid var(--color-ink);
+    box-shadow:
+      inset -3px -3px 0 0 var(--color-parchment-dim),
+      inset 3px 3px 0 0 var(--color-parchment-lit),
+      3px 3px 0 0 rgb(0 0 0 / 0.35);
+    transition: none;
+  }
+
+  .pixel-button:active {
+    transform: translate(3px, 3px);
+    box-shadow:
+      inset 3px 3px 0 0 var(--color-parchment-dim),
+      inset -3px -3px 0 0 var(--color-parchment-lit);
+  }
+
+  .pixel-button[aria-pressed='true'],
+  .pixel-button[aria-current='page'] {
+    background: var(--color-gold);
+    box-shadow:
+      inset 3px 3px 0 0 rgb(0 0 0 / 0.2),
+      inset -3px -3px 0 0 rgb(255 255 255 / 0.4);
+  }
+
+  /* 文字描边，用于压在天空上的标题 */
+  .pixel-outline {
+    color: var(--color-parchment-lit);
+    text-shadow:
+      2px 0 0 var(--color-ink),
+      -2px 0 0 var(--color-ink),
+      0 2px 0 var(--color-ink),
+      0 -2px 0 var(--color-ink),
+      2px 2px 0 var(--color-ink),
+      -2px 2px 0 var(--color-ink),
+      2px -2px 0 var(--color-ink),
+      -2px -2px 0 var(--color-ink),
+      4px 4px 0 rgb(0 0 0 / 0.4);
+  }
+}
+
+@layer components {
+  /*
+   * 角色的待机呼吸。振幅只有 2px，但一屋子人各自错开相位之后，
+   * 整个村落就有了「在呼吸」的感觉——这是静态截图和游戏画面的分界线。
+   * 相位偏移由每个角色的 --bob-delay 给出，见 ModelRoom。
+   */
+  @keyframes idle-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  .anim-idle {
+    animation: idle-bob 2.6s ease-in-out infinite;
+    animation-delay: var(--bob-delay, 0s);
+  }
+
+  /*
+   * 行走循环。精灵表第 3 行是正面朝向的 9 帧，
+   * 用 steps(9) 逐格跳，绝不能让 background-position 连续插值，否则会拖影。
+   */
+  @keyframes walk-cycle {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      background-position-x: calc(var(--sheet-width) * -1);
+    }
+  }
+
+  .group:hover .anim-walk {
+    animation: walk-cycle 0.75s steps(9) infinite;
+    background-position-y: var(--walk-row) !important;
+  }
+
+  /* 电脑屏幕的微弱闪烁，让房间里有「正在运行」的活气 */
+  @keyframes screen-flicker {
+    0%,
+    92%,
+    100% {
+      opacity: 1;
+    }
+    94% {
+      opacity: 0.72;
+    }
+    96% {
+      opacity: 1;
+    }
+    98% {
+      opacity: 0.85;
+    }
+  }
+
+  .anim-screen {
+    animation: screen-flicker 4.5s linear infinite;
+    animation-delay: var(--bob-delay, 0s);
+  }
+
+  /* 思考光环缓慢地一涨一缩，像思绪在往外扩散 */
+  @keyframes halo-pulse {
+    0%,
+    100% {
+      transform: translateY(0) scaleX(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: translateY(-1px) scaleX(1.06);
+      opacity: 1;
+    }
+  }
+
+  .anim-halo {
+    animation: halo-pulse 3.2s ease-in-out infinite;
+    animation-delay: var(--bob-delay, 0s);
+  }
+
+  /* 新生闪光的眨眼 */
+  @keyframes twinkle {
+    0%,
+    62%,
+    100% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+    72%,
+    88% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .anim-twinkle {
+    animation: twinkle 2.8s ease-in-out infinite;
+  }
+
+  /* 云的横向漂移 */
+  @keyframes drift {
+    from {
+      transform: translateX(-12%);
+    }
+    to {
+      transform: translateX(112%);
+    }
+  }
+
+  .anim-drift {
+    animation: drift linear infinite;
+  }
+}
+
+/* 尊重系统的减弱动态偏好——这个站动画很多，必须提供关闭路径 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,2724 @@
+{
+  "_note": "厂商/榜单自报成绩的归属明细，供前端生成精确的悬停文案。attributionType=vendor-self-reported 用「厂商自报，未经第三方复核」，attributionType=third-party 用「第三方榜单（来源：xxx），未经 Epoch 复核」。注意 swe_bench_pro 混着两类来源，且实测有 18 分的系统性落差（Scale AI 官方榜中位数 41.0，厂商系统卡自评中位数 59.0），直接套用为 swe_bench_verified 校准的档位阈值会系统性低估被 Scale 测过的模型。data/models.json 里 provenance[\"benchmarks.<key>\"] === \"models.dev\" 已足够判断该不该发光，这份文件只在需要精确署名或按来源分档时才用得上。",
+  "attribution": {
+    "alibaba/qwen-max": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 21.8,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "alibaba/qwen3-235b-a22b": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 59.6,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 21.41,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "alibaba/qwen3-32b": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 40,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "alibaba/qwen3-coder-480b-a35b-instruct": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 38.7,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "alibaba/qwen3.5-122b-a10b": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 72,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B"
+      }
+    },
+    "alibaba/qwen3.5-27b": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 72.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-27B"
+      }
+    },
+    "alibaba/qwen3.5-397b-a17b": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 76.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B"
+      }
+    },
+    "alibaba/qwen3.6-27b": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 77.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-27B"
+      }
+    },
+    "alibaba/qwen3.6-35b-a3b": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 73.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+      }
+    },
+    "alibaba/qwen3.7-max": {
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": null,
+        "rawName": "NL2Repo",
+        "score": 47.2,
+        "sourceHost": "qwen.ai",
+        "sourceUrl": "https://qwen.ai/blog?id=qwen3.7"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 78.3,
+        "sourceHost": "qwen.ai",
+        "sourceUrl": "https://qwen.ai/blog?id=qwen3.7"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 60.6,
+        "sourceHost": "qwen.ai",
+        "sourceUrl": "https://qwen.ai/blog?id=qwen3.7"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 80.4,
+        "sourceHost": "qwen.ai",
+        "sourceUrl": "https://qwen.ai/blog?id=qwen3.7"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 69.7,
+        "sourceHost": "qwen.ai",
+        "sourceUrl": "https://qwen.ai/blog?id=qwen3.7"
+      }
+    },
+    "alibaba/qwen3.8-27b": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolved",
+        "rawName": "SWE-bench Pro",
+        "score": 61.7,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/Qwen/Qwen3.8-27B"
+      }
+    },
+    "alibaba/qwen3.8-max-preview": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 56.6,
+        "sourceHost": "alibabacloud.com",
+        "sourceUrl": "https://www.alibabacloud.com/blog/qwen3-8-max-a-new-bar-for-coding-and-cowork_603421"
+      },
+      "frontier_swe": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_swe",
+        "league": "frontier_swe",
+        "metric": "dominance score",
+        "rawName": "FrontierSWE",
+        "score": 73.5,
+        "sourceHost": "alibabacloud.com",
+        "sourceUrl": "https://www.alibabacloud.com/blog/qwen3-8-max-a-new-bar-for-coding-and-cowork_603421"
+      },
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": "resolve rate",
+        "rawName": "NL2Repo",
+        "score": 55.9,
+        "sourceHost": "alibabacloud.com",
+        "sourceUrl": "https://www.alibabacloud.com/blog/qwen3-8-max-a-new-bar-for-coding-and-cowork_603421"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 67.7,
+        "sourceHost": "alibabacloud.com",
+        "sourceUrl": "https://www.alibabacloud.com/blog/qwen3-8-max-a-new-bar-for-coding-and-cowork_603421"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 86.6,
+        "sourceHost": "alibabacloud.com",
+        "sourceUrl": "https://www.alibabacloud.com/blog/qwen3-8-max-a-new-bar-for-coding-and-cowork_603421"
+      }
+    },
+    "anthropic/claude-3-5-haiku-20241022": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 28,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "anthropic/claude-3-5-sonnet-20241022": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 51.6,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "anthropic/claude-3-7-sonnet-20250219": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 64.9,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "anthropic/claude-fable-5": {
+      "frontier_code": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_code",
+        "league": "frontier_code",
+        "metric": "pass rate",
+        "rawName": "FrontierCode",
+        "score": 29.3,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 80.3,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      "swe_bench_verified": {
+        "attributionType": "third-party",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 95,
+        "sourceHost": "benchlm.ai",
+        "sourceUrl": "https://benchlm.ai/benchmarks/sweVerified"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 88,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      }
+    },
+    "anthropic/claude-haiku-4-5": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 39.45,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "anthropic/claude-opus-4-0": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 72,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "anthropic/claude-opus-4-20250514": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 72,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "anthropic/claude-opus-4-5-20251101": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 45.89,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "anthropic/claude-opus-4-6": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 33.3,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 35.58,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 36.67,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 51.9,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "anthropic/claude-opus-4-7": {
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 48.57,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 64.3,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 66.1,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8"
+      }
+    },
+    "anthropic/claude-opus-4-8": {
+      "frontier_code": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_code",
+        "league": "frontier_code",
+        "metric": "pass rate",
+        "rawName": "FrontierCode",
+        "score": 13.4,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 69.2,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      "swe_bench_verified": {
+        "attributionType": "third-party",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 88.6,
+        "sourceHost": "benchlm.ai",
+        "sourceUrl": "https://benchlm.ai/benchmarks/sweVerified"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 74.6,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8"
+      }
+    },
+    "anthropic/claude-opus-5": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 68.8,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/claude-opus-5-system-card"
+      },
+      "frontier_code": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_code",
+        "league": "frontier_code",
+        "metric": "mean@5",
+        "rawName": "FrontierCode",
+        "score": 53.4,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/claude-opus-5-system-card"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 89.5,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/claude-opus-5-system-card"
+      },
+      "swe_bench_multimodal": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multimodal",
+        "league": "swe_bench_multimodal",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multimodal",
+        "score": 59.4,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/claude-opus-5-system-card"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 79.2,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/claude-opus-5-system-card"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 96,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/claude-opus-5-system-card"
+      }
+    },
+    "anthropic/claude-sonnet-4-0": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 61.3,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 42.7,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "anthropic/claude-sonnet-4-20250514": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 61.3,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "anthropic/claude-sonnet-4-5": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 43.6,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "anthropic/claude-sonnet-4-6": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 31.2,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 32.21,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 31.76,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 67,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5"
+      }
+    },
+    "anthropic/claude-sonnet-5": {
+      "frontier_code": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_code",
+        "league": "frontier_code",
+        "metric": "pass rate",
+        "rawName": "FrontierCode",
+        "score": 38.8,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 78.3,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 63.2,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 85.2,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 80.4,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-sonnet-5"
+      }
+    },
+    "cohere/command-a-03-2025": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 12,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "cohere/north-mini-code-1-0": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 40.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/CohereLabs/North-Mini-Code-1.0"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 67.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/CohereLabs/North-Mini-Code-1.0"
+      }
+    },
+    "deepreinforce/ornith-1.0-35b": {
+      "claw_eval": {
+        "attributionType": "vendor-self-reported",
+        "key": "claw_eval",
+        "league": "claw_eval",
+        "metric": "percent",
+        "rawName": "Claw-eval",
+        "score": 69.8,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-35B"
+      },
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": "percent",
+        "rawName": "NL2Repo",
+        "score": 34.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-35B"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 69.3,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-35B"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Pro",
+        "score": 50.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-35B"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 75.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-35B"
+      },
+      "terminal_bench_2_1": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench_2_1",
+        "league": "terminal_bench_2_1",
+        "metric": "percent",
+        "rawName": "Terminal-Bench 2.1",
+        "score": 64.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-35B"
+      }
+    },
+    "deepreinforce/ornith-1.0-397b": {
+      "claw_eval": {
+        "attributionType": "vendor-self-reported",
+        "key": "claw_eval",
+        "league": "claw_eval",
+        "metric": "percent",
+        "rawName": "Claw-eval",
+        "score": 77.1,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B"
+      },
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": "percent",
+        "rawName": "NL2Repo",
+        "score": 48.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 78.9,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Pro",
+        "score": 62.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 82.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B"
+      },
+      "terminal_bench_2_1": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench_2_1",
+        "league": "terminal_bench_2_1",
+        "metric": "percent",
+        "rawName": "Terminal-Bench 2.1",
+        "score": 78.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-397B"
+      }
+    },
+    "deepreinforce/ornith-1.0-9b": {
+      "claw_eval": {
+        "attributionType": "vendor-self-reported",
+        "key": "claw_eval",
+        "league": "claw_eval",
+        "metric": "percent",
+        "rawName": "Claw-eval",
+        "score": 63.1,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-9B"
+      },
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": "percent",
+        "rawName": "NL2Repo",
+        "score": 27.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-9B"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 52,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-9B"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Pro",
+        "score": 42.9,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-9B"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "percent resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 69.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-9B"
+      },
+      "terminal_bench_2_1": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench_2_1",
+        "league": "terminal_bench_2_1",
+        "metric": "percent",
+        "rawName": "Terminal-Bench 2.1",
+        "score": 43.1,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepreinforce-ai/Ornith-1.0-9B"
+      }
+    },
+    "deepseek/deepseek-chat": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 70.2,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "deepseek/deepseek-r1": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 56.9,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "deepseek/deepseek-reasoner": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 74.2,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "deepseek/deepseek-v4-flash": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 79,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+      }
+    },
+    "deepseek/deepseek-v4-flash-0731": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 54.4,
+        "sourceHost": "api-docs.deepseek.com",
+        "sourceUrl": "https://api-docs.deepseek.com/updates/"
+      },
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": "resolve rate",
+        "rawName": "NL2Repo",
+        "score": 54.2,
+        "sourceHost": "api-docs.deepseek.com",
+        "sourceUrl": "https://api-docs.deepseek.com/updates/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "pass@1",
+        "rawName": "Terminal-Bench",
+        "score": 82.7,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+      }
+    },
+    "deepseek/deepseek-v4-pro": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 80.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+      }
+    },
+    "google/gemini-2.5-flash": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 55.1,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "google/gemini-2.5-pro": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 83.1,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "google/gemini-3-flash-preview": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 8.2,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 10,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 30.3,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 34.63,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "google/gemini-3-pro-preview": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 43.3,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "google/gemini-3.1-pro-preview": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 13.5,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 33.81,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 29.84,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 46.1,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 70.3,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8"
+      }
+    },
+    "google/gemini-3.5-flash": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 55.1,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/gemini/flash/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 76.2,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/gemini/flash/"
+      }
+    },
+    "google/gemini-3.5-flash-lite": {
+      "mle_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "mle_bench",
+        "league": "mle_bench",
+        "metric": "average position score",
+        "rawName": "MLE-Bench",
+        "score": 39.2,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 54.2,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 54,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/"
+      }
+    },
+    "google/gemini-3.6-flash": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 49,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/evals-methodology/gemini-3-6-flash/"
+      },
+      "mle_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "mle_bench",
+        "league": "mle_bench",
+        "metric": "average position score",
+        "rawName": "MLE-Bench",
+        "score": 63.9,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/evals-methodology/gemini-3-6-flash/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 58.7,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/evals-methodology/gemini-3-6-flash/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 78,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/evals-methodology/gemini-3-6-flash/"
+      }
+    },
+    "google/gemini-3.7-flash": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 65.3,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-7-flash/"
+      },
+      "frontier_code": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_code",
+        "league": "frontier_code",
+        "metric": "score",
+        "rawName": "FrontierCode",
+        "score": 43.6,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-7-flash/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 85.8,
+        "sourceHost": "deepmind.google",
+        "sourceUrl": "https://deepmind.google/models/model-cards/gemini-3-7-flash/"
+      }
+    },
+    "meituan/longcat-2.0": {
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 77.3,
+        "sourceHost": "github.com",
+        "sourceUrl": "https://github.com/meituan-longcat/longcat-2.0"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 59.5,
+        "sourceHost": "github.com",
+        "sourceUrl": "https://github.com/meituan-longcat/longcat-2.0"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 70.8,
+        "sourceHost": "github.com",
+        "sourceUrl": "https://github.com/meituan-longcat/longcat-2.0"
+      }
+    },
+    "meta/llama-4-maverick-17b-instruct": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 15.6,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 5.24,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "meta/muse-glimmer-30b": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 51.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/meta-models/Muse-Glimmer-30B"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Verified",
+        "score": 76,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/meta-models/Muse-Glimmer-30B"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 51.7,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/meta-models/Muse-Glimmer-30B"
+      }
+    },
+    "meta/muse-spark-1.1": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 53.3,
+        "sourceHost": "ai.meta.com",
+        "sourceUrl": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 61.5,
+        "sourceHost": "ai.meta.com",
+        "sourceUrl": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 80,
+        "sourceHost": "ai.meta.com",
+        "sourceUrl": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/"
+      }
+    },
+    "microsoft/mai-code-1-flash": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 51.2,
+        "sourceHost": "microsoft.ai",
+        "sourceUrl": "https://microsoft.ai/news/introducingmai-code-1-flash/"
+      },
+      "swe_bench_verified": {
+        "attributionType": "third-party",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 71.6,
+        "sourceHost": "llm-stats.com",
+        "sourceUrl": "https://llm-stats.com/benchmarks/swe-bench-verified"
+      },
+      "terminal_bench": {
+        "attributionType": "third-party",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 54.8,
+        "sourceHost": "llm-stats.com",
+        "sourceUrl": "https://llm-stats.com/benchmarks/terminal-bench-2"
+      }
+    },
+    "minimax/minimax-m2": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 69.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-M2"
+      }
+    },
+    "minimax/minimax-m2.1": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 36.81,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 74,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-M2.1"
+      }
+    },
+    "minimax/minimax-m2.5": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 10.3,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 19.52,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 18.6,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_verified": {
+        "attributionType": "third-party",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 75.8,
+        "sourceHost": "swebench.com",
+        "sourceUrl": "https://www.swebench.com/"
+      }
+    },
+    "minimax/minimax-m2.7": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 56.2,
+        "sourceHost": "minimax.io",
+        "sourceUrl": "https://www.minimax.io/blog/minimax-m3"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 79.9,
+        "sourceHost": "minimax.io",
+        "sourceUrl": "https://www.minimax.io/blog/minimax-m3"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 51.1,
+        "sourceHost": "minimax.io",
+        "sourceUrl": "https://www.minimax.io/blog/minimax-m3"
+      }
+    },
+    "minimax/minimax-m3": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 59,
+        "sourceHost": "minimax.io",
+        "sourceUrl": "https://www.minimax.io/blog/minimax-m3"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 80.5,
+        "sourceHost": "minimax.io",
+        "sourceUrl": "https://www.minimax.io/blog/minimax-m3"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 66,
+        "sourceHost": "minimax.io",
+        "sourceUrl": "https://www.minimax.io/blog/minimax-m3"
+      }
+    },
+    "mistral/codestral-latest": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 11.1,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "mistral/devstral-medium-2507": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 61.6,
+        "sourceHost": "mistral.ai",
+        "sourceUrl": "https://mistral.ai/news/devstral-2507"
+      }
+    },
+    "mistral/devstral-small-2507": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 53.6,
+        "sourceHost": "mistral.ai",
+        "sourceUrl": "https://mistral.ai/news/devstral-2507"
+      }
+    },
+    "mistral/mistral-medium-2604": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 77.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
+      }
+    },
+    "mistral/mistral-medium-latest": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 77.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
+      }
+    },
+    "moonshotai/kimi-k2-thinking": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 71.3,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
+      }
+    },
+    "moonshotai/kimi-k2.5": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 13.1,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 20.95,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 25.77,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_verified": {
+        "attributionType": "third-party",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 70.8,
+        "sourceHost": "swebench.com",
+        "sourceUrl": "https://www.swebench.com/"
+      }
+    },
+    "moonshotai/kimi-k2.6": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 80.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.6"
+      }
+    },
+    "moonshotai/kimi-k2.7-code": {
+      "program_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "program_bench",
+        "league": "program_bench",
+        "metric": null,
+        "rawName": "Program Bench",
+        "score": 53.6,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+      }
+    },
+    "moonshotai/kimi-k3": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 67.5,
+        "sourceHost": "kimi.com",
+        "sourceUrl": "https://www.kimi.com/blog/kimi-k3"
+      },
+      "frontier_swe": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_swe",
+        "league": "frontier_swe",
+        "metric": "dominance score",
+        "rawName": "FrontierSWE",
+        "score": 81.2,
+        "sourceHost": "kimi.com",
+        "sourceUrl": "https://www.kimi.com/blog/kimi-k3"
+      },
+      "program_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "program_bench",
+        "league": "program_bench",
+        "metric": "score",
+        "rawName": "Program Bench",
+        "score": 77.8,
+        "sourceHost": "kimi.com",
+        "sourceUrl": "https://www.kimi.com/blog/kimi-k3"
+      },
+      "swe_marathon": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_marathon",
+        "league": "swe_marathon",
+        "metric": "resolve rate",
+        "rawName": "SWE Marathon",
+        "score": 42,
+        "sourceHost": "kimi.com",
+        "sourceUrl": "https://www.kimi.com/blog/kimi-k3"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 88.3,
+        "sourceHost": "kimi.com",
+        "sourceUrl": "https://www.kimi.com/blog/kimi-k3"
+      }
+    },
+    "nvidia/nemotron-3-ultra-550b-a55b": {
+      "livecodebench": {
+        "attributionType": "vendor-self-reported",
+        "key": "livecodebench",
+        "league": "livecodebench",
+        "metric": "pass@1",
+        "rawName": "LiveCodeBench",
+        "score": 89,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 67.7,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 70.7,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 56.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16"
+      }
+    },
+    "openai/gpt-4.1": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 52.4,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-4.1-mini": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 32.4,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-4.1-nano": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 8.9,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-4o": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 23.1,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-4o-2024-08-06": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 23.1,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-4o-2024-11-20": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 18.2,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-4o-mini": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 3.6,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/gpt-5": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 88,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 41.78,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "openai/gpt-5.2": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 29.94,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "openai/gpt-5.2-codex": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 41.04,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "openai/gpt-5.3-codex": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 32.6,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 42.38,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 38.98,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      }
+    },
+    "openai/gpt-5.4": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 40.8,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 44.29,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 44.36,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 59.1,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 75.1,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+      }
+    },
+    "openai/gpt-5.4-mini": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 54.4,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 60,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/"
+      }
+    },
+    "openai/gpt-5.4-nano": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 52.4,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "accuracy",
+        "rawName": "Terminal-Bench",
+        "score": 46.3,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/"
+      }
+    },
+    "openai/gpt-5.5": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 45.43,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 44.79,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 42.59,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 58.6,
+        "sourceHost": "anthropic.com",
+        "sourceUrl": "https://www.anthropic.com/news/claude-opus-4-8"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 82.7,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/introducing-gpt-5-5/"
+      }
+    },
+    "openai/gpt-5.6-luna": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 67.2,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 62.7,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 84.7,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      }
+    },
+    "openai/gpt-5.6-sol": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 72.7,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 64.6,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 88.8,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      }
+    },
+    "openai/gpt-5.6-terra": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 69.6,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 63.4,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 87.4,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-5-6/"
+      }
+    },
+    "openai/gpt-6-astra": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 74.1,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-6-astra/"
+      },
+      "frontier_code": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_code",
+        "league": "frontier_code",
+        "metric": "score",
+        "rawName": "FrontierCode",
+        "score": 64.5,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-6-astra/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 57.9,
+        "sourceHost": "openai.com",
+        "sourceUrl": "https://openai.com/index/gpt-6-astra/"
+      }
+    },
+    "openai/o1": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 61.7,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/o3": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 81.3,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/o3-mini": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 60.4,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/o3-pro": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 84.9,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "openai/o4-mini": {
+      "aider_polyglot": {
+        "attributionType": "third-party",
+        "key": "aider_polyglot",
+        "league": "aider_polyglot",
+        "metric": "percent correct",
+        "rawName": "Aider Polyglot",
+        "score": 72,
+        "sourceHost": "aider.chat",
+        "sourceUrl": "https://aider.chat/docs/leaderboards/"
+      }
+    },
+    "poolside/laguna-xs-2.1": {
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 63.1,
+        "sourceHost": "poolside.ai",
+        "sourceUrl": "https://poolside.ai/blog/introducing-laguna-xs-2-1"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 47.6,
+        "sourceHost": "poolside.ai",
+        "sourceUrl": "https://poolside.ai/blog/introducing-laguna-xs-2-1"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 70.9,
+        "sourceHost": "poolside.ai",
+        "sourceUrl": "https://poolside.ai/blog/introducing-laguna-xs-2-1"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 37.5,
+        "sourceHost": "poolside.ai",
+        "sourceUrl": "https://poolside.ai/blog/introducing-laguna-xs-2-1"
+      }
+    },
+    "sakana/fugu": {
+      "livecodebench": {
+        "attributionType": "vendor-self-reported",
+        "key": "livecodebench",
+        "league": "livecodebench",
+        "metric": null,
+        "rawName": "LiveCodeBench",
+        "score": 92.9,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      },
+      "livecodebench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "livecodebench_pro",
+        "league": "livecodebench_pro",
+        "metric": null,
+        "rawName": "LiveCodeBench Pro",
+        "score": 87.8,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": null,
+        "rawName": "SWE Bench Pro",
+        "score": 59,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      },
+      "terminal_bench_2_1": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench_2_1",
+        "league": "terminal_bench_2_1",
+        "metric": null,
+        "rawName": "Terminal Bench 2.1",
+        "score": 80.2,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      }
+    },
+    "sakana/fugu-ultra": {
+      "livecodebench": {
+        "attributionType": "vendor-self-reported",
+        "key": "livecodebench",
+        "league": "livecodebench",
+        "metric": null,
+        "rawName": "LiveCodeBench",
+        "score": 93.2,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      },
+      "livecodebench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "livecodebench_pro",
+        "league": "livecodebench_pro",
+        "metric": null,
+        "rawName": "LiveCodeBench Pro",
+        "score": 90.8,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": null,
+        "rawName": "SWE Bench Pro",
+        "score": 73.7,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      },
+      "terminal_bench_2_1": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench_2_1",
+        "league": "terminal_bench_2_1",
+        "metric": null,
+        "rawName": "Terminal Bench 2.1",
+        "score": 82.1,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models"
+      }
+    },
+    "sakana/sakana-namazu": {
+      "livecodebench_v6": {
+        "attributionType": "vendor-self-reported",
+        "key": "livecodebench_v6",
+        "league": "livecodebench_v6",
+        "metric": null,
+        "rawName": "LiveCodeBench v6",
+        "score": 90.33,
+        "sourceHost": "console.sakana.ai",
+        "sourceUrl": "https://console.sakana.ai/models?model=sakana-namazu"
+      }
+    },
+    "stepfun/step-3.5-flash": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 74.4,
+        "sourceHost": "arxiv.org",
+        "sourceUrl": "https://arxiv.org/abs/2602.10604"
+      }
+    },
+    "stepfun/step-3.7-flash": {
+      "claw_eval": {
+        "attributionType": "vendor-self-reported",
+        "key": "claw_eval",
+        "league": "claw_eval",
+        "metric": "pass^3",
+        "rawName": "ClawEval",
+        "score": 67.1,
+        "sourceHost": "static.stepfun.com",
+        "sourceUrl": "https://static.stepfun.com/blog/step-3.7-flash/"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 56.3,
+        "sourceHost": "static.stepfun.com",
+        "sourceUrl": "https://static.stepfun.com/blog/step-3.7-flash/"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 76.5,
+        "sourceHost": "static.stepfun.com",
+        "sourceUrl": "https://static.stepfun.com/blog/step-3.7-flash/"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 59.6,
+        "sourceHost": "static.stepfun.com",
+        "sourceUrl": "https://static.stepfun.com/blog/step-3.7-flash/"
+      }
+    },
+    "tencent/hy3": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 78,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/tencent/Hy3"
+      }
+    },
+    "tencent/hy3-preview": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 74.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/tencent/Hy3-preview"
+      }
+    },
+    "xai/grok-4.5": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 62,
+        "sourceHost": "x.ai",
+        "sourceUrl": "https://x.ai/news/grok-4-5"
+      },
+      "swe_bench_multilingual": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_multilingual",
+        "league": "swe_bench_multilingual",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Multilingual",
+        "score": 78,
+        "sourceHost": "x.ai",
+        "sourceUrl": "https://x.ai/news/grok-4-5"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 64.7,
+        "sourceHost": "x.ai",
+        "sourceUrl": "https://x.ai/news/grok-4-5"
+      },
+      "swe_marathon": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_marathon",
+        "league": "swe_marathon",
+        "metric": "pass@1",
+        "rawName": "SWE Marathon",
+        "score": 29,
+        "sourceHost": "x.ai",
+        "sourceUrl": "https://x.ai/news/grok-4-5"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 83.3,
+        "sourceHost": "x.ai",
+        "sourceUrl": "https://x.ai/news/grok-4-5"
+      }
+    },
+    "xiaomi/mimo-v2.5-pro": {
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 57.2,
+        "sourceHost": "mimo.xiaomi.com",
+        "sourceUrl": "https://mimo.xiaomi.com/mimo-v2-5-pro/"
+      },
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 78.9,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro"
+      }
+    },
+    "zhipuai/glm-4.6": {
+      "swe_bench_pro": {
+        "attributionType": "third-party",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 9.67,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/swe_bench_pro_public"
+      }
+    },
+    "zhipuai/glm-4.7": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 73.8,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.7"
+      },
+      "terminal_bench_2_0": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench_2_0",
+        "league": "terminal_bench_2_0",
+        "metric": "score",
+        "rawName": "Terminal Bench 2.0",
+        "score": 33.4,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.7"
+      }
+    },
+    "zhipuai/glm-4.7-flash": {
+      "swe_bench_verified": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 59.2,
+        "sourceHost": "huggingface.co",
+        "sourceUrl": "https://huggingface.co/zai-org/GLM-4.7-Flash"
+      }
+    },
+    "zhipuai/glm-5": {
+      "swe_atlas_codebase_qna": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_codebase_qna",
+        "league": "swe_atlas_codebase_qna",
+        "metric": "score",
+        "rawName": "SWE-Atlas Codebase QnA",
+        "score": 20.5,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-qna"
+      },
+      "swe_atlas_refactoring": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_refactoring",
+        "league": "swe_atlas_refactoring",
+        "metric": "score",
+        "rawName": "SWE-Atlas Refactoring",
+        "score": 24.24,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-refactoring"
+      },
+      "swe_atlas_test_writing": {
+        "attributionType": "third-party",
+        "key": "swe_atlas_test_writing",
+        "league": "swe_atlas_test_writing",
+        "metric": "score",
+        "rawName": "SWE-Atlas Test Writing",
+        "score": 28.74,
+        "sourceHost": "labs.scale.com",
+        "sourceUrl": "https://labs.scale.com/leaderboard/sweatlas-tw"
+      },
+      "swe_bench_verified": {
+        "attributionType": "third-party",
+        "key": "swe_bench_verified",
+        "league": "swe_bench_vendor",
+        "metric": "resolved",
+        "rawName": "SWE-Bench Verified",
+        "score": 72.8,
+        "sourceHost": "swebench.com",
+        "sourceUrl": "https://www.swebench.com/"
+      }
+    },
+    "zhipuai/glm-5.2": {
+      "deepswe": {
+        "attributionType": "vendor-self-reported",
+        "key": "deepswe",
+        "league": "deepswe",
+        "metric": "resolve rate",
+        "rawName": "DeepSWE",
+        "score": 46.2,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      },
+      "frontier_swe": {
+        "attributionType": "vendor-self-reported",
+        "key": "frontier_swe",
+        "league": "frontier_swe",
+        "metric": "dominance",
+        "rawName": "FrontierSWE",
+        "score": 74.4,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      },
+      "nl2repo": {
+        "attributionType": "vendor-self-reported",
+        "key": "nl2repo",
+        "league": "nl2repo",
+        "metric": "resolve rate",
+        "rawName": "NL2Repo",
+        "score": 48.9,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      },
+      "program_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "program_bench",
+        "league": "program_bench",
+        "metric": "score",
+        "rawName": "Program Bench",
+        "score": 63.7,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      },
+      "swe_bench_pro": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_bench_pro",
+        "league": "swe_bench_pro",
+        "metric": "resolve rate",
+        "rawName": "SWE-Bench Pro",
+        "score": 62.1,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      },
+      "swe_marathon": {
+        "attributionType": "vendor-self-reported",
+        "key": "swe_marathon",
+        "league": "swe_marathon",
+        "metric": "resolve rate",
+        "rawName": "SWE Marathon",
+        "score": 13,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      },
+      "terminal_bench": {
+        "attributionType": "vendor-self-reported",
+        "key": "terminal_bench",
+        "league": "terminal_bench",
+        "metric": "success rate",
+        "rawName": "Terminal-Bench",
+        "score": 82.7,
+        "sourceHost": "z.ai",
+        "sourceUrl": "https://z.ai/blog/glm-5.2"
+      }
+    }
+  },
+  "generatedAt": "2026-09-20T16:56:56.725Z"
+}

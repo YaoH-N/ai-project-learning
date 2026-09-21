@@ -1,0 +1,72 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+# NEXT_DIST_DIR=.next-build 之类的并行构建目录，见 next.config.ts
+/.next-*/
+/out/
+# B 站 Toy 的上传包，由 npm run toy:build 从 .next-toy 再生产
+/.toy-pkg/
+
+# 精灵图是可再生产物：由 assets/lpc（已提交）+ data/models.json（已提交）确定性合成，
+# 整轮约 14 秒。不提交是因为合成器一旦改动就会一次性产生 15 MB 新 blob，
+# 几次迭代就能把仓库撑爆。构建时由 prebuild 钩子生成。
+/public/sprites/
+
+# 搜索索引同理：由 data/models.json 确定性生成，约 52 KB，跟着 sprites 一起重做
+/public/search-index.json
+
+# 上游原始快照。每次 npm run sync 都会整体重写（约 3 MB），提交进去等于给每一次
+# 自动同步都附带三兆的二进制改动。它只在「上游改了字段、想回放解析逻辑」时有用，
+# 那种时候现跑一次 sync 就有了。注意 scripts/qa/match-gap.ts 依赖它。
+/data/raw/
+
+# 条件请求的 HTTP 缓存（16 MB，body 以 base64 存放）。**这条是合规要求，不只是体积问题**：
+# 缓存里躺着上游的原始响应，其中 openrouter.ai 那一条含 187 处 benchmarks.artificial_analysis，
+# 正是 docs/DATA.md 里写明绝不再分发的数据。管线在解析阶段剔除它，但缓存是解析之前的东西。
+# 入库即等于公开再分发。CI 的缓存由 actions/cache 负责，不该也不需要走 git。
+/data/.cache/
+
+# QA 截图是随手产出的验证材料，不是文档插图（文档引用的是 samples/ 根目录下那几张）。
+# 15 MB 起步，而且改一次 UI 就全部过期，留在库里只会误导下一个人。
+# 注意别把 docs/screenshots/ 一起排除掉：那是 README 的配图，由
+# scripts/qa/readme-shots.ts 统一压到 1440 宽（六张共约 650 KB），需要跟着仓库走。
+/docs/samples/shots/
+# 精灵图总览表由每次 npm run sprites 重新生成，0.5 MB，同样是再生产物
+/docs/samples/sprite-contact-sheet.png
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
